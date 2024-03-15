@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Assignments</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style1.css"> <!-- Your CSS file -->
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title mb-4">All Assignments</h2>
+                <div id="assignmentsList" class="list-group">
+                    <!-- Assignment links will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+<!-- <div class="container mt-5">
+    <h2 class="mb-4">All Assignments</h2>
+    <div id="assignmentsList" class="list-group">
+        <!-- Assignment links will be populated here -->
+    </div>
+</div> -->
+
+<script >
+
+document.addEventListener('DOMContentLoaded', function() {
+    const endpoint = 'http://127.0.0.1:3000/api/v1/assignment';
+
+    fetch(endpoint)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Network response was not ok (${response.status})`);
+            }
+            return response.json();
+        })
+        .then(assignments => {
+            const listElement = document.getElementById('assignmentsList');
+
+            assignments.data.assignments.forEach(assignment => {
+                // Create an anchor element and style it as a card
+                const cardLink = document.createElement('a');
+                cardLink.href = `assignment-details.html?assignmentId=${assignment._id}`;
+                cardLink.classList.add('card', 'mb-3', 'shadow-sm', 'text-decoration-none');
+
+                const cardBody = document.createElement('div');
+                cardBody.classList.add('card-body');
+
+                // Title
+                const title = document.createElement('h5');
+                title.classList.add('card-title', 'text-dark');
+                title.textContent = assignment.title || "No Title";
+
+                cardBody.appendChild(title);
+                cardLink.appendChild(cardBody);
+                listElement.appendChild(cardLink);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching assignments:', error);
+            const listElement = document.getElementById('assignmentsList');
+            listElement.innerHTML = '<p>Error fetching assignments. Please try again later.</p>';
+        });
+});
+
+
+
+</script> <!-- Your JavaScript file -->
+</body>
+</html>

@@ -1,0 +1,146 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+textarea, input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#feedbackArea {
+    margin-top: 20px;
+}
+
+#feedbackArea h2 {
+    margin-bottom: 10px;
+}
+
+.code-editor {
+    display: flex;
+    position: relative;
+    border: 1px solid #333;
+    background-color: #1e1e1e; /* Dark background for the editor */
+    font-family: 'Consolas', 'Monaco', 'Lucida Console', monospace;
+    color: #d4d4d4; /* Lighter text color for better readability */
+  }
+  
+  .line-numbers {
+    background-color: #2c2c2c; /* Slightly lighter background for line numbers */
+    color: #858585; /* Gray color for line numbers */
+    padding: 10px;
+    text-align: right;
+    user-select: none;
+    overflow: hidden; /* Hide overflow to match the main editor */
+  }
+  
+  textarea#codeInput {
+    border: none;
+    outline: none;
+    resize: none;
+    background-color: #1e1e1e; /* Match the editor's background color */
+    color: #d4d4d4; /* Match the editor's text color */
+    font-family: 'Consolas', 'Monaco', 'Lucida Console', monospace;
+    padding: 10px;
+    line-height: 1.5;
+    width: calc(100% - 20px); /* Adjust width to account for padding */
+    white-space: pre;
+    overflow: auto;
+  }
+  
+  
+  .status-card {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .status-card[data-status="passed"] .status-symbol {
+    color: green;
+  }
+  
+  .status-card[data-status="failed"] .status-symbol {
+    color: red;
+  }
+  
+  .status-symbol {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .status-message {
+    font-size: 16px;
+  }
+  .feedback-card {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-left: 3px solid; /* Add a left border to highlight status */
+}
+
+.feedback-card[data-status="passed"] {
+    border-color: green; /* Green border for passed */
+}
+
+.feedback-card[data-status="passed"] .feedback-symbol {
+    color: green;
+}
+
+.feedback-card[data-status="failed"] {
+    border-color: red; /* Red border for failed */
+}
+
+.feedback-card[data-status="failed"] .feedback-symbol {
+    color: red;
+}
+
+.feedback-symbol {
+    margin-right: 10px;
+    font-size: 24px; /* Adjust icon size as needed */
+}
+
+.feedback-message {
+    font-size: 16px;
+}
+  

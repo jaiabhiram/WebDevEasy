@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDevEasy - Home</title>
+    <style>
+        body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #007BFF;
+    color: #FFFFFF;
+    padding: 20px;
+    text-align: center;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px;
+}
+
+.cta-buttons button {
+    background-color: #007BFF;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-buttons button:hover {
+    background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>WebDevEasy</h1>
+    </header>
+    <main>
+        <section class="hero">
+            <h2>Welcome to WebDevEasy</h2>
+            <p>Your ultimate destination for learning web development easily.</p>
+            <div class="cta-buttons">
+                <button id="studentBtn">I'm a Student</button>
+                <button id="adminBtn">I'm an Admin</button>
+            </div>
+        </section>
+    </main>
+    <script>
+        document.getElementById('studentBtn').addEventListener('click', function() {
+    window.location.href = './homepage.html'; // Update with the correct path
+});
+
+document.getElementById('adminBtn').addEventListener('click', function() {
+    window.location.href = './newAssignment.html'; // Update with the correct path
+});
+
+    </script>
+</body>
+</html>

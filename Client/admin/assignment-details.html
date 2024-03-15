@@ -1,0 +1,41 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Assignment Submission Form</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    </head>
+    <body>
+            
+        <div class="container">
+            <header>
+                <h1 id="displayTitle" class="h3 mb-3"></h1>
+                <!-- <h1>Web Development Assignment Submission</h1> -->
+            </header>
+            <!-- <div id="displayTitle" class="h3 mb-3"></div> Placeholder for the title -->
+    <div id="displayQuestion" class="mb-3"></div>
+    <br>
+            <form id="submissionForm">
+                <label for="codeInput">Paste your code here:</label>
+                <div class="code-editor">
+                    <div class="line-numbers" id="lineNumbers"></div>
+                    <textarea id="codeInput" spellcheck="false" wrap="off"></textarea>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="fileUpload">Or <br><br> upload your HTML file:</label>
+                    <input type="file" id="fileUpload" accept=".html">
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="feedbackArea">
+                <h2>Feedback</h2>
+            </div>
+        </div>
+        <script src="app.js"></script>
+
+    </body>
+    </html>
