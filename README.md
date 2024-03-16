@@ -92,3 +92,6 @@ To get started with the application, please follow these setup instructions:
    **•	With the server running, open a web browser of your choice.** 
 
    **•	In the browser's address bar, enter the file path to client/index.html located within your project's directory. This action will render the application's user interface, making it accessible for use.**
+
+
+#Hosted on netlify app at https://webdeveasy.netlify.app/
